@@ -568,10 +568,17 @@ th {
 }
 
 .clearfix:after,
-.input-holder:after {
+.input-holder:after,
+.container:after {
   content: '';
   display: block;
   clear: both;
+}
+
+#nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .ellipsis {
@@ -800,9 +807,71 @@ label {
   white-space: normal;
 }
 
+body,
+html {
+  height: 100%;
+}
+
 #wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
   position: relative;
+  min-height: 100%;
   overflow: hidden;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+#header {
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 5px 10px 0 rgba(50, 50, 50, 0.06);
+}
+
+.logo {
+  float: left;
+  padding: 10px 0 0;
+}
+
+#nav {
+  float: right;
+  font-size: 15px;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+#nav li {
+  float: left;
+}
+
+#nav a {
+  display: block;
+  padding: 40px 17px;
+}
+
+#main {
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  position: relative;
+  z-index: 1;
+  padding: 100px 0 0;
+}
+
+#footer {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  padding: 10px 0;
+  color: #fff;
+  background: #111;
 }
 
 /*# sourceMappingURL=all.css.map */
