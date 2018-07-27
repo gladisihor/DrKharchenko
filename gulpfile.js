@@ -68,7 +68,7 @@ var path = {
         jsDist: './dist/js/**/*.js',
         scssToCss: './src/scss/**/*.scss',
         lessToCss: './src/less/**/*.less',
-        css: './src/css/*.css',
+        css: './src/css/**/*.css',
         img: './src/sourceimages/**/*.*',
         svgFonts: './src/sourceicons/**/*.*'
     }
@@ -90,7 +90,7 @@ var connectDistApi = {
     livereload: true
 };
 var prettifyApi = {
-    indent: '	'
+    indent: '   '
 };
 var fileincludeApi = {
     prefix: '@@',
@@ -102,14 +102,14 @@ var iconfontApi = function(less) {
         path: path.svgFontTemplate,
         targetPath: less ? path.svgFontLessOutput : path.svgFontScssOutput,
         fontPath: path.svgFontCssPath,
-        cssClass: 'icon',
-        normalize: true,
-        fontHeight: 1000
+        cssClass: 'icon'
     };
 };
 var iconGeneratorApi = {
     fontName: fontName,
+    height: 100,
     normalize: true,
+    centerHorizontally: true,
     formats: ['ttf', 'eot', 'woff', 'woff2', 'svg']
 };
 
@@ -199,7 +199,7 @@ gulp.task('optimize', function () {
 
 /* prettify css */
 gulp.task('prettify:css', function () {
-    return gulp.src(path.watch.css)
+    return gulp.src(path.css + '/all.css')
         .pipe(gcmq())
         .pipe(cssbeautify(prettifyApi))
         .pipe(gulp.dest(path.cssDist));

@@ -33,7 +33,7 @@ a, button, input[type="submit"]{
 // hide tel links on desktop
 @media only screen and (min-width:1025px) {
     a[href^=tel],a[href^=skype], a[href^=sms] {
-    cursor:default;
-    pointer-events:none;
+    // cursor:default;
+    // pointer-events:none;
   }
 }
