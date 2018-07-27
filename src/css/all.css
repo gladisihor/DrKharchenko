@@ -427,6 +427,10 @@ body, html {
   min-height: 100%;
   overflow: hidden; }
 
+.custom-logo {
+  width: 201px;
+  padding: 4px 0; }
+
 #main {
   -ms-flex-positive: 1;
   flex-grow: 1;
@@ -525,6 +529,24 @@ body, html {
   color: #aaa; }
   .section-contact .address-contact > a:hover {
     color: #03c4eb; }
+
+.about-article {
+  color: #111; }
+  .about-article .alignleft {
+    max-width: 50%; }
+    @media (max-width: 767px) {
+      .about-article .alignleft {
+        max-width: none; } }
+  .about-article .slider-holder {
+    padding: 20px 0 40px; }
+    .about-article .slider-holder.active .opener .slider-arrow {
+      transform: rotate(180deg); }
+    .about-article .slider-holder .opener:focus, .about-article .slider-holder .opener:hover {
+      color: #fff; }
+    .about-article .slider-holder .opener .slider-arrow {
+      display: inline-block;
+      vertical-align: baseline;
+      transition: all 0.2s ease; }
 
 #footer {
   -ms-flex-negative: 0;

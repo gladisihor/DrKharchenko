@@ -44,6 +44,10 @@ body, html{
 .container{
 	@extend %clearfix;
 }
+.custom-logo{
+	width:201px;
+	padding:4px 0;
+}
 #main{
 	flex-grow:1;
 	position:relative;
@@ -158,6 +162,35 @@ body, html{
 		color:#aaa;
 		&:hover{
 			color:#03c4eb;
+		}
+	}
+}
+.about-article{
+	color:#111;
+	.alignleft{
+		max-width:50%;
+		@include media("<tablet") {
+			max-width:none;
+		}
+	}
+	.slider-holder{
+		padding:20px 0 40px;
+		&.active{
+			.opener{
+				.slider-arrow{
+					transform:rotate(180deg);
+				}
+			}
+		}
+		.opener{
+			&:focus, &:hover{
+				color:#fff;
+			}
+			.slider-arrow{
+				display:inline-block;
+				vertical-align:baseline;
+				transition:all 0.2s ease;
+			}
 		}
 	}
 }
